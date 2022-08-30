@@ -24,11 +24,10 @@ export default function SignIn() {
     try {
       await signIn({ email, password });
     } catch (err) {
-      console.error(err);
       toast.current.show({
         severity: "error",
         summary: "Error",
-        detail: `${err.message}`,
+        detail: `${err.response.data}`,
       });
     }
   }
